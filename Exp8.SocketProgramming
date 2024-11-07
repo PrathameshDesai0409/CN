@@ -1,0 +1,51 @@
+Save as MyServer.java
+
+import java.io.*;  
+import java.net.*;  
+
+public class MyServer {
+    public static void main(String[] args) {
+        try {
+            ServerSocket ss = new ServerSocket(6666);
+            System.out.println("Server is waiting for a client...");
+            Socket s = ss.accept(); // Establishes connection
+            System.out.println("Client connected.");
+
+            DataInputStream dis = new DataInputStream(s.getInputStream());
+            String str = dis.readUTF(); 
+            System.out.println("Message = " + str);
+
+            ss.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+
+
+Save as MyClient.java
+
+import java.io.*;  
+import java.net.*;  
+
+public class MyClient {
+    public static void main(String[] args) {
+        try {
+            Socket s = new Socket("localhost", 6666);
+            System.out.println("Connected to server.");
+
+            DataOutputStream dout = new DataOutputStream(s.getOutputStream());
+            dout.writeUTF("Hello Server");
+            dout.flush();
+            dout.close();
+            s.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+
+Step1: javac MyServer.java
+       java MyServer
+Step2: javac MyClient.java
+       java MyClient
