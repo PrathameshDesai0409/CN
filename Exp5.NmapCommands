@@ -1,0 +1,61 @@
+
+1. Target specification: Target specification refers to identifying the hosts or network ranges that you want to scan. It allows you to specify IP addresses, domain names, or entire subnets that should be analyzed. This command is the starting point for any network scanning process.
+Syntax : nmap [target]
+Example: nmap -TV -A -v scanme.nmap.org
+
+ Multiple hosts can be specified in subnet either from the command line or a file: 
+- nmap 192.168.1.0/24 # Scans a whole subnet
+
+2. Ping Scanning: Nmap optimizes port scan speed by first checking if the target is online
+before attempting to scan any ports. This is called host discovery or ping scanning and is
+enabled in every scan by default. To determine target availability, Nmap sends an ICMP
+echo request (ping), ICMP timestamp request and probes TCP ports 80 and 443. In local
+networks, only ARP requests are utilized for host discovery. The ping scanning gives
+information about every active IP on your Network. 
+Syntax: nmap -sn <target>      
+Example: nmap -sn 192.168.1.1
+
+3. Pingless Scanning: A no ping scan prevents Nmap from doing any host discovery. It is specified with the -Pn option. By default, Nmap only probes active machines found via host discovery. With this option selected, Nmap will do the requested scanning functions against every target IP specified, as if every one is active. This is done when it is important to find every possible active machine, including ones that may not be responsive to host discovery.
+Syntax: nmap -sS <target>
+Example: nmap -sS 192.168.1.1
+
+4. OS Scanning: Operating system (OS) detection is a feature in Nmap that remotely scans a target host and presents details of its operating system if there is a match. TCP/IP stack fingerprinting is used to send a series of probes (e.g., TCP and UDP packets) to the specified host and examines the responses. The results are then compared to the nmap-os-db database 2,600+ known OS fingerprints, and the details are printed if there is a match.
+Syntax: nmap -O <target>
+Example: nmap -O localhost
+
+
+5. Quick Scanning: Quick scanning with nmap focuses on speed and efficiency, providing rapid results without performing exhaustive checks. This is useful when you need to quickly identify live hosts or open ports on a network without spending a lot of time.
+Syntax: nmap -T4 -F <target>
+Example:nmap -T4 -F 192.168.1.1
+
+
+
+6. Port Scanning: Port Scanning is one of the features of Nmap wherein the tool detects the status of the ports on active hosts in a network. The status of the ports can be open, filtered, or closed. Type Nmap in the command line to run Nmap. Add necessary switches according to the scanning type to initiate a specific scan technique. 
+Syntax: nmap -sT <target> 
+Example: nmap -sT localhost
+
+7. Regular Scanning: Port scanning is used to discover open ports on a target host. It can identify specific services running on those ports, helping to assess the security posture of the target.
+Syntax : nmap -p <port-range> <target>
+Example: nmap -p 80,443 localhost
+
+
+ 
+8.Traceroute: Ping scans allows including trace route information of the targets. Use the Nmap option  --traceroute to trace the route from the scanning machine to the target host:
+Syntax:nmap --traceroute <target>
+Example: nmap --traceroute google.com
+
+9. Version Scanning: Version scanning identifies the specific versions of services running on open ports. This is useful for vulnerability assessment by determining the exact software version.
+Syntax : nmap -sV <target>
+Example: nmap -sV localhost
+
+
+ 
+
+10. Scan Reports: Scan reports summarize the results of a scan in a structured format, which can be saved for future reference or analysis. Reports can be generated in various formats such as plain text, XML, or HTML.
+1) Syntax : nmap -oN <output-file.txt> <target>
+
+   2) Syntax : nmap -oX <output-file.xml> <target>
+
+3) Syntax : nmap -oG <output-file.gnmap> <target>
+
+ 4) Syntax : nmap -oA <basename> <target>
