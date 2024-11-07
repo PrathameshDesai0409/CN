@@ -1,0 +1,62 @@
+1. Ipconfig
+ipconfig (standing for "Internet Protocol configuration") is a console application program of some computer operating systems that displays all current TCP/IP network configuration values and refreshes Dynamic Host Configuration Protocol (DHCP) and Domain Name System (DNS) settings. IPCONFIG.
+Syntax: ipconfig
+
+2. NSLOOKUP
+Nslookup (stands for “Name Server Lookup”) is a useful command for getting information
+from the DNS server. It is a network administration tool for querying the Domain Name System
+(DNS) to obtain domain name or IP address mapping or any other specific DNS record. It is
+also used to troubleshoot DNS related problems.
+Syntax: nslookup <domain name>
+nslookup www.sfit.ac.in
+
+
+3. Getmac
+Getmac is a Windows command used to display the Media Access Control (MAC) addresses for each network adapter in the computer. These activities will show you how to use the getmac command to display MAC addresses.
+Syntax: getmac
+
+4. Ping
+PING (Packet Internet Groper) command is used to check the network connectivity
+between host and server/host. This command takes as input the IP address or the URL and sends a data packet to the specified address with the message “PING” and get a response from the
+server/host this time is recorded which is called latency. Fast ping low latency means faster
+connection. Ping uses ICMP(Internet Control Message Protocol) to send an ICMP echo
+message to the specified host if that host is available then it sends an ICMP reply message. Ping is generally measured in milliseconds; every modern operating system has this ping pre-installed.
+Syntax: ping –c 4 10.1.8.3
+
+
+5. TRACEROUTE
+traceroute command in Linux prints the route that a packet takes to reach the host. This
+command is useful when you want to know about the route and about all the hops that a packet
+takes. Below image depicts how traceroute command is used to reach the Google (172.217.26.206) host from the local machine and it also prints detail about all the hops
+that it visits in between.
+Syntax: traceroute www.google.com
+
+6. Netstat
+Netstat command displays various network related information such as network connections,
+routing tables, interface statistics, masquerade connections, multicast memberships etc.
+Syntax: netstat -a
+
+
+7. ARP
+ARP command manipulates the System’s ARP cache. It also allows a complete dump of the
+ARP cache. ARP stands for Address Resolution Protocol. The primary function of this protocol
+is to resolve the IP address of a system to its mac address, and hence it works between level
+2(Data link layer) and level 3(Network layer).
+Syntax: arp -v
+
+
+8. System Info
+This Command is  used to display all the necessary information about our System such as configuration ,version ,hostname, processor details, network card details etc.
+These are the basic and helpful networking commands which will help you in troubleshooting and managing your network devices. These commands help you be productive, efficient and manage your network connectivity effectively. It tells us the correct IP address and if that IP can be reached by our computer and what  are the paths being taken to reach the destination address.
+Syntax: systeminfo
+
+
+9. Nbtstat
+The netstat command generates displays that show network status and protocol statistics. You can display the status of TCP and UDP endpoints in table format, routing table information, and interface information. netstat displays various types of network data depending on the command line option selected.
+Syntax: nbtstat
+
+
+9. Pathping
+The PathPing tool is a route tracing tool that combines features of Ping and Tracert with additional information that neither of those tools provides. PathPing sends packets to each router on the way to a final destination over a period of time, and then computes results based on the packets returned from each hop. Since PathPing shows the degree of packet loss at any given router or link, you can pinpoint which routers or links might be causing network problems.
+Syntax: pathping
+
