@@ -1,0 +1,163 @@
+Steps for implementing RIP: 
+Step1: 
+Select Router 1 – select 1841 router and drag it to the screen (Router0). 
+Select Switches 1 – select 2950-24 and drag it below the Router0 (Switch0). Select End Device – select Generic and drag it below Switch0 (PC-PT PC0). Select End Device – select Generic and drag it below Switch0 (PC-PT PC1). 
+Select Router 2 – select 1841 and drag it to right of the Router0 (Router1). Select Switches 2 – select 2950-24 and drag it below the Router1 (Switch1). Select End Device – select Generic and drag it below Switch1 (PC-PT PC2). Select End Device – select Generic and drag it below Switch1 (PC-PT 
+PC3). 
+Select Router 3 – select 1841 and drag it to right of the Router0 (Router2). Select Switches 3 – select 2950-24 and drag it below the Router2 (Switch2). Select End Device – select Generic and drag it below Switch0 (PC-PT 
+PC4). 
+Select End Device – select Generic and drag it below Switch0 (PC-PT 
+PC5).
+
+Select Connections – Connect routers, switches and PCs to each other. 
+(Router0->switch0->PC0,PC1 | Router1->switch1->PC2,PC3 | 
+Router2->switch2->PC4,PC5)
+Step 2: 
+Click on PC0 and go to Desktop > IP Configuration 
+Add IP Address, as you will add the IP Address, Subnet Mask will be automatically added and displayed. 
+Add Default Gateway and close the window. 
+Step 3: 
+Click on PC1 and go to Desktop > IP Configuration 
+Add IP Address, as you will add the IP Address, Subnet Mask will be automatically added and displayed. 
+Add Default Gateway and close the window. 
+Step 4: 
+Click on Router0. Go to Config > FastEthernet0/0. Here, 
+add IP Address and On the Port Status. 
+Step: 5: 
+Click on PC2 and go to Desktop > IP Configuration 
+Add IP Address, as you will add the IP Address, Subnet Mask will be automatically added and displayed. 
+Add Default Gateway and close the window. 
+Step 6: 
+Click on PC3 and go to Desktop > IP Configuration 
+Add IP Address, as you will add the IP Address, Subnet Mask will be automatically added and displayed. 
+Add Default Gateway and close the window. 
+Step 7: 
+Click on Router1. Go to Config > FastEthernet0/0. Here, 
+add IP Address and On the Port Status. 
+Step: 8: 
+Click on PC4 and go to Desktop > IP Configuration 
+Add IP Address, as you will add the IP Address, Subnet Mask will be automatically added and displayed. 
+Add Default Gateway and close the window. 
+Step 9: 
+Click on PC5 and go to Desktop > IP Configuration 
+Add IP Address, as you will add the IP Address, Subnet Mask will be automatically added and displayed. 
+Add Default Gateway and close the window. 
+Step 10: 
+Click on Router2. Go to Config > FastEthernet0/0. Here, 
+add IP Address and On the Port Status.
+Step 11: 
+Click on Router0. Go to Config > Serial0/0/0 & 
+Serial0/0/1 . Here, add IP Address and On the Port 
+Status. 
+As you will see above, there is green dots which means connections are done successfully between Routers, Switches and PCs. 
+Step 12: 
+Click on Router1. Go to Config > Serial0/0/0 & 
+Serial0/0/1 . Here, add IP Address and On the Port 
+Status. 
+As you will see above, there is green dots which means connections are done successfully between Routers, Switches and PCs. 
+Step 13: 
+Click on Router2. Go to Config > Serial0/0/0 & 
+Serial0/0/1 . Here, add IP Address and On the Port 
+Status. 
+As you will see above, there is green dots which means connections are done successfully between Routers, Switches and PCs.. 
+Step 14: 
+Click on Router0. Go to Config > RIP. 
+Here, add the network address to connect router0 with switch0, PC0, PC1, router1 and router2 .
+Step 15: 
+Click on Router1. Go to Config > RIP. 
+
+Here, add the network address to connect router1 with switch1, PC2, PC3, router0 and router2. 
+Step 16: 
+Click on Router2. Go to Config > RIP. 
+
+Here, add the network address to connect router2 with switch2, PC4, PC5, router0 and router1. 
+Now, all the connections are done successfully.
+Final Output :
+
+So, Routing Information Protocol is done 
+
+
+Steps for implementing VLAN: 
+Step1: 
+Select Router – select 1841 router and drag it to the screen (Router0). 
+Select another Router – select 1841 and drag it to right of the Router0 (Router1). Select Switches – select 2950-24 and drag it below the Router0 (Switch0). 
+Select Switches – select 2950-24 and drag it below the Router1 (Switch1). 
+Select End Device – select Generic and drag it below Switch0 (PC-PT PC0). Select End Device – select Generic and drag it below Switch1 (PC-PT PC1). Select End Device – select Generic and drag it below Switch1 (PC-PT PC2). Select Connections – Connect routers, switches and PCs to each other. 
+
+Step 2: 
+Click on PC0 and go to Desktop > IP Configuration 
+Add IP Address, as you will add the IP Address, Subnet Mask will be automatically added and displayed. 
+Add Default Gateway and close the window.
+
+Step 3: 
+Click on PC1 and go to Desktop > IP Configuration 
+Add IP Address, as you will add the IP Address, Subnet Mask will be automatically added and displayed. 
+Add Default Gateway and close the window. 
+
+Step 4: 
+Click on PC2 and go to Desktop > IP Configuration 
+Add IP Address, as you will add the IP Address, Subnet Mask will be automatically added and displayed. 
+Add Default Gateway and close the window.
+
+Step 5: 
+Click on Router0. Go to Config > FastEthernet0/0. 
+Here, add IP Address and On the Port Status. 
+
+Step 6: 
+Click on Router1. Go to Config > FastEthernet0/1. Here, 
+add IP Address and On the Port Status.
+
+As you will see above, there is green dots which means connections are done successfully between Router, Switches and PCs. 
+Step 7: 
+Click on Router0. Go to Config > FastEthernet0/1. Here, 
+add IP Address and On the Port Status.
+
+Step 8: 
+Click on Router1. Go to Config > FastEthernet0/0. Here, 
+add IP Address and On the Port Status.
+
+
+As you can see above, connection is done between both the Routers successfully. 
+Step 9: 
+Click on Router1. Go to Config > RIP. 
+Here, add the network address to connect router1 with switch1, PC1, PC2 and router0. 
+Step 10: 
+Click on Router0. Go to Config > RIP.
+Here, add the network address to connect router0 with switch0, PC0 and router1. 
+Now, all the connections are done successfully, you can check it by clicking on this symbol
+ 
+And then, click on any two PCs , you will get the status as successful. 
+
+So till now, Routing Information Protocol is done. Now, 
+we will start with implementing VLAN. 
+Step 11: 
+Add two PC (PC 3 and PC4) and connect it with switch.
+ Step 12: 
+Click on PC3 and go to Desktop > IP Configuration 
+Add IP Address, as you will add the IP Address, Subnet Mask will be automatically added and displayed.
+
+Add Default Gateway and close the window. 
+Step 13: 
+Click on PC3 and go to Desktop > IP Configuration 
+Add IP Address, as you will add the IP Address, Subnet Mask will be automatically added and displayed. 
+Add Default Gateway and close the window. 
+
+Step 14: 
+Click on Switch1 and go to CLI 
+Add type the VLAN code – 
+VLAN CODE: 
+VLAN 
+enable config t 
+vlan 20 name 
+purchase exit 
+vlan 30 name 
+sales exit 
+int fa0/2 switchport 
+access vlan 20 exit 
+int fa0/3 switchport 
+access vlan 20 
+exit 
+int fa0/4 switchport 
+access vlan 30 exit 
+int fa0/5 switchport 
+access vlan 30 exit
