@@ -1,0 +1,126 @@
+CODE:
+def character_count(data_stream):
+    """Framing method using character count."""
+    frame = str(len(data_stream)) + data_stream
+    return frame
+
+def byte_stuffing(data_stream):
+    """Framing method using byte stuffing."""
+    flag = 'F'
+    escape = 'E'
+    stuffed_data = data_stream.replace(flag, escape + flag).replace(escape, escape + escape)
+    frame = flag + stuffed_data + flag
+    return frame
+
+def bit_stuffing(data_stream):
+    """Framing method using bit stuffing."""
+    stuffed_data = ''
+    consecutive_ones = 0
+    for bit in data_stream:
+        if bit == '1':
+            consecutive_ones += 1
+            stuffed_data += bit
+            if consecutive_ones == 5:
+                stuffed_data += '0'
+                consecutive_ones = 0
+        else:
+            stuffed_data += bit
+            consecutive_ones = 0
+    frame = '01111110' + stuffed_data + '01111110'
+    return frame
+
+def physical_layer_violation(data_stream):
+    """Framing method using physical layer coding violation."""
+    frame = 'PV' + data_stream + 'PV'
+    return frame
+
+def main():
+    while True:
+        data_stream = input("Enter the Data Stream: ")
+
+        print("\nChoose the Framing technique:")
+        print("1. Character Count")
+        print("2. Byte Stuffing")
+        print("3. Bit Stuffing")
+        print("4. Physical Data Violation")
+        print("5. Exit")
+
+        choice = int(input("Enter the number for the corresponding Framing technique: "))
+
+        if choice == 1:
+            result = character_count(data_stream)
+        elif choice == 2:
+            result = byte_stuffing(data_stream)
+        elif choice == 3:
+            result = bit_stuffing(data_stream)
+        elif choice == 4:
+            result = physical_layer_violation(data_stream)
+        elif choice == 5:
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+            continue
+
+        print(f"The Frame after Processing is: {result}\n")
+
+if __name__ == "__main__":
+    main()
+
+OUTPUT:
+Enter the Data Stream: 110011
+
+Choose the Framing technique:
+1. Character Count
+2. Byte Stuffing
+3. Bit Stuffing
+4. Physical Data Violation
+5. Exit
+Enter the number for the corresponding Framing technique: 1
+The Frame after Processing is: 6110011
+
+Enter the Data Stream: 110F1E0
+
+Choose the Framing technique:
+1. Character Count
+2. Byte Stuffing
+3. Bit Stuffing
+4. Physical Data Violation
+5. Exit
+Enter the number for the corresponding Framing technique: 2
+The Frame after Processing is: F110EEF1EE0F
+
+Enter the Data Stream: 11011110101
+
+Choose the Framing technique:
+1. Character Count
+2. Byte Stuffing
+3. Bit Stuffing
+4. Physical Data Violation
+5. Exit
+Enter the number for the corresponding Framing technique: 3
+The Frame after Processing is: 011111101101111010101111110
+
+Enter the Data Stream: 10101
+
+Choose the Framing technique:
+1. Character Count
+2. Byte Stuffing
+3. Bit Stuffing
+4. Physical Data Violation
+5. Exit
+Enter the number for the corresponding Framing technique: 4
+The Frame after Processing is: PV10101PV
+
+Enter the Data Stream: 1011
+
+Choose the Framing technique:
+1. Character Count
+2. Byte Stuffing
+3. Bit Stuffing
+4. Physical Data Violation
+5. Exit
+Enter the number for the corresponding Framing technique: 5
+Exiting the program.
+
+=== Code Execution Successful ===
