@@ -1,0 +1,30 @@
+PROCEDURE:
+1. Start packet tracer and drag 2 Cisco 1841 routers on the logical workspace.
+2. Drag and drop two generic switches ( Switch 0 and Switch 1 ) to connect the end devices to router
+3. Click on “End Devices” and drag two PCs on the work space for each switch .
+4. Arrange and connect these devices as shown in the Figure 1 below
+5. Use cross-over cables to connect PC0 and PC1 through switch and switches to routers.
+6. Configure the router, servers and PCs as described in section below.
+7. Test the configuration either by using a ping command and by sending simple PDUs both.
+
+Details of Router Configuration:
+- Reboot router R0 by powering off and an under the Physical tab.
+- Router performs the Power on Self Test (POST)
+- Click on Config tab and then choose the interface Fa0/0 , provide the IP address as 192.168.1.1 and Subnet mask as 255.255.255.0 .
+- Proceed similarly for interface Fa0/1 , and provide the IP address 192.168.2.1 and Subnet mask as 255.255.255.0 .
+- Repeat steps 1-4 for router R1 configuring its both interfaces as Fa0/0 ( IP address 192.168.1.2 and subnet mask as 255.255.255.0 ) and Fa0/1 ( IP address 192.168.3.1 and subnet mask as 255.255.255.0 )
+- Doing the above steps ensures that connection status turns to green which indicates that connection is enabled for transmission.
+- Now its time to configure the routing table for each router ( R0 and R1) .
+- Click on the magnifying glass available at the vertical right pane of the packet tracer .Click the magnifying glass on to router R0 and select the routing table from the drop down list . A routing table for router R0 will be displayed having 2 entries types as C ( connected ) with the next hop as blank .
+- The routing table is to be updated with the next hop entry , so that the Simple PDU could be diverted on to the available next hop. Provide the following entries :
+Network Address : 192.168.3.0
+Subnet mask : 255.255.255.0
+Next Hop : 192.168.1.2
+
+- Repeat 8-9 for router (R1) and provide the information as follows .
+Network Address : 192.168.2.0
+Subnet mask : 255.255.255.0
+Next Hop : 192.168.1.1
+
+Details of End Devices Configuration for each Network :
+For each network ( 192.168.2.0 )provide the addressing for each end devices . For PC0 ( IP address as 192.168.2.2 and Subnet mask : 255.255.255.0 ) and PC1 ( IP address as 192.168.2.3 and Subnet mask : 255.255.255.0 ). For each network ( 192.168.3.0 )provide the addressing for each end devices . For PC2 ( IP address as 192.168.3.2 and Subnet mask : 255.255.255.0 ) and PC3 ( IP address as 192.168.3.3 and Subnet mask : 255.255.255.0
